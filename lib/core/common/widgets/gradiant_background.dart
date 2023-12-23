@@ -1,6 +1,4 @@
-import 'package:exam_app/core/resources/media_res.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class GradiantBackground extends StatelessWidget {
   const GradiantBackground({required this.image, required this.child, super.key});

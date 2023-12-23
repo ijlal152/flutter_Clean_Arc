@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:exam_app/core/common/views/loading_view.dart';
 import 'package:exam_app/core/common/widgets/gradiant_background.dart';
 import 'package:exam_app/core/resources/colors.dart';
@@ -37,55 +39,52 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: GradiantBackground(
-        image: MediaRes.onBoardingBackground,
-        child: BlocConsumer<OnBoardingCubit, OnBoardingState>(
-            listener: (context, state){
-              if(state is OnBoardingStatusState && state.isFirstTimer){  // 3:43
-                Navigator.pushReplacementNamed(context, '/home');
-              }else if(state is UserCachedState){
-                // push to the appropriate screen
-              }
-            },
-            builder: (context, state){
-              if(state is CheckingIfUserIsFirstTimerState || state is CacheFirstTimerState){
-                return const LoadingView();
-              }
-              return Stack(
-                children: [
-                  PageView(
-                    controller: pageController,
-                    children:  [
-                      const OnBoardingBody(pageContent: PageContent.first()),
-                      Align(
-                        alignment: const Alignment(0, .04),
-                        child: SmoothPageIndicator(
-                            controller: pageController,
-                            count: 3,
-                          onDotClicked: (index){
-                              pageController.animateToPage(
-                                  index,
-                                  duration: const Duration(milliseconds: 500),
-                                  curve: Curves.easeInOut,
-                              );
-                          },
-                          effect: const WormEffect(
-                            dotHeight: 10,
-                            dotWidth: 10,
-                            spacing: 40,
-                            activeDotColor: Colours.primaryColour,
-                            dotColor: Colors.white,
-                          ),
+      body: BlocConsumer<OnBoardingCubit, OnBoardingState>(
+          listener: (context, state){
+            if(state is OnBoardingStatusState && state.isFirstTimer == false){  // 3:43
+              Navigator.pushReplacementNamed(context, '/home');
+            }else if(state is UserCachedState){
+              // push to the appropriate screen
+            }
+          },
+          builder: (context, state){
+            if(state is CheckingIfUserIsFirstTimerState || state is CacheFirstTimerState){
+              return const LoadingView();
+            }
+            return Stack(
+              children: [
+                PageView(
+                  controller: pageController,
+                  children:  const[
+                    OnBoardingBody(pageContent: PageContent.first()),
+                    OnBoardingBody(pageContent: PageContent.second()),
+                    OnBoardingBody(pageContent: PageContent.third()),
+                  ],
+                ),
+                Align(
+                      alignment: const Alignment(0, .04),
+                      child: SmoothPageIndicator(
+                          controller: pageController,
+                          count: 3,
+                        onDotClicked: (index){
+                            pageController.animateToPage(
+                                index,
+                                duration: const Duration(milliseconds: 500),
+                                curve: Curves.easeInOut,
+                            );
+                        },
+                        effect: const WormEffect(
+                          dotHeight: 10,
+                          dotWidth: 10,
+                          spacing: 40,
+                          activeDotColor: Colours.primaryColour,
+                          dotColor: Colors.white,
                         ),
-                      )
-                      // OnBoardingBody(pageContent: PageContent.second()),
-                      // OnBoardingBody(pageContent: PageContent.third()),
-                    ],
-                  )
-                ],
-              );
-            },
-        ),
+                      ),
+                    )
+              ],
+            );
+          },
       ),
     );
   }

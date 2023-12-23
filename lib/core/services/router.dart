@@ -17,10 +17,12 @@ Route<dynamic> generateRoute(RouteSettings settings){
       );
 
     default:
+      // ignore: lines_longer_than_80_chars
       return _pageBuilder((_) => const PageUnderConstruction(), settings: settings);
   }
 }
 
+// ignore: lines_longer_than_80_chars
 PageRouteBuilder<dynamic> _pageBuilder(Widget Function(BuildContext) page, {required RouteSettings settings}){
   return PageRouteBuilder(
     settings: settings,
