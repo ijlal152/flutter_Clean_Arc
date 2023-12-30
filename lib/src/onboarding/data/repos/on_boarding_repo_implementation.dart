@@ -28,5 +28,4 @@ class OnBoardingRepoImplementation implements OnBoardingRepo{
       return Left(CacheFailure(message: e.message, statusCode: e.statusCode));
     }
   }
-
 }

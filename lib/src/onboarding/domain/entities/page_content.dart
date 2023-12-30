@@ -16,13 +16,13 @@ class PageContent extends Equatable{
   );
 
   const PageContent.second() : this(
-    img: MediaRes.casualReading,
+    img: MediaRes.casuallife,
     title: 'Brand new curriculum',
     desc: "This is the first online education platform 'From Ijlal'",
   );
 
   const PageContent.third() : this(
-    img: MediaRes.casualReading,
+    img: MediaRes.casualMeditation,
     title: 'Brand new curriculum',
     desc: "This is the first online education platform 'From Ijlal'",
   );

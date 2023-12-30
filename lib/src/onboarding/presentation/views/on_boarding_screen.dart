@@ -1,9 +1,7 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 import 'package:exam_app/core/common/views/loading_view.dart';
-import 'package:exam_app/core/common/widgets/gradiant_background.dart';
 import 'package:exam_app/core/resources/colors.dart';
-import 'package:exam_app/core/resources/media_res.dart';
 import 'package:exam_app/src/onboarding/domain/entities/page_content.dart';
 import 'package:exam_app/src/onboarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:exam_app/src/onboarding/presentation/widgets/on_boarding_body.dart';
@@ -81,7 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           dotColor: Colors.white,
                         ),
                       ),
-                    )
+                    ),
               ],
             );
           },

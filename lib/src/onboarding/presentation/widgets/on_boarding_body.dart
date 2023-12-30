@@ -7,6 +7,7 @@ import 'package:exam_app/src/onboarding/domain/entities/page_content.dart';
 import 'package:exam_app/src/onboarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody({required this.pageContent, super.key});
 

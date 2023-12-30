@@ -47,7 +47,7 @@ class MediaRes{
   static const chemistryIcon = '$_baseIcon/con/flask.png';
   static const biologylcon = '$_baseIcon/dna.png';
   static const mathIcon = '$_baseIcon/calculator.png';
-  static const LanguageIcon = '$_baseIcon/translation.png';
+  static const languageIcon = '$_baseIcon/translation.png';
   static const literatureIcon = '$_baseIcon/write.png';
   static const scoreboard = '$_baseIcon/scoreboard.png';
   static const goldCrown = '$_baseIcon/crown.png';

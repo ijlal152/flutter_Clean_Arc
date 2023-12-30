@@ -1,10 +1,20 @@
-import 'dart:convert';
+// ignore_for_file: lines_longer_than_80_chars
 
+import 'dart:convert';
 import 'package:exam_app/core/utilities/typedef.dart';
 import 'package:exam_app/src/authentication/domain/entities/user.dart';
 
 class UserModel extends User{
   const UserModel({required super.id, required super.createdAt, required super.name, required super.avatar});
+
+  factory UserModel.fromMap(DataMap map) {
+    return UserModel(
+      id: map['id'] as String,
+      createdAt: map['createdAt'] as String,
+      name: map['name'] as String,
+      avatar: map['avatar'] as String,
+    );
+  }
 
   const UserModel.empty() :
         this(id: '1', createdAt: 'empty.createdAt', name: 'empty.name', avatar: 'empty.avatar') ;
@@ -34,15 +44,4 @@ class UserModel extends User{
       'avatar': avatar,
     };
   }
-
-  factory UserModel.fromMap(DataMap map) {
-    return UserModel(
-      id: map['id'] as String,
-      createdAt: map['createdAt'] as String,
-      name: map['name'] as String,
-      avatar: map['avatar'] as String,
-    );
-  }
-
-
 }

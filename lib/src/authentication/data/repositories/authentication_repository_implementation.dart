@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:exam_app/core/utilities/typedef.dart';
 import 'package:exam_app/src/authentication/data/datasources/authentication_remote_data_source.dart';
 import 'package:exam_app/src/authentication/domain/entities/user.dart';
